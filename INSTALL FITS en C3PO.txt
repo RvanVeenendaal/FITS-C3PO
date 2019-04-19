@@ -1,0 +1,116 @@
+*** Installatie FITS en C3PO ***
+Getest op Lenovo ThinkPad met 64-bits Windows-besturingssysteem.
+Herhaald op een HP15-laptop met 64-bits Windows-besturingssysteem.
+Remco van Veenendaal, Nationaal Archief, voorjaar 2019
+
+*** INSTALLATIEPROCES ***
+1) Folderstructuur aangemaakt: C:\FITS_C3PO met daarin folders
+- FITS (voor FITS)
+- FITS-output (voor FITS-XML-uitvoer)
+- C3PO (voor C3PO)
+- C3PO-output (voor C3PO-uitvoer)
+- MongoDB (voor MongoDB)
+- PLAY (voor het Play Framework)
+- JAVA (voor de JRE of JDK)
+
+2) FITS 1.4.0 gedownload van 
+https://projects.iq.harvard.edu/fits/downloads
+en uitgepakt in folder
+C:\FITS_C3PO\FITS\
+
+3) testbestanden klaargezet voor testdoeleinden in: 
+C:\Temp\testset
+
+4) FITS 1.4.0 succesvol getest in een Command Prompt d.m.v. commando: 
+c:\FITS_C3PO\FITS\fits-1.4.0\fits.bat -i C:\Temp\testset -o c:\FITS_C3PO\FITS-output\testset -r
+
+5) MongoDB 2.0.5 gedownload van http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2.0.5.zip
+uitgepakt en gekopieerd naar de folder
+C:\FITS_C3PO\MongoDB\mongodb-2.0.5
+
+6) MongoDB succesvol getest in een Command Prompt d.m.v. commando:
+c:\FITS_C3PO\MongoDB\mongodb-2.0.5\bin\mongod.exe -dbpath c:\FITS_C3PO\MongoDB\data\db
+
+NB Let op: door de parameter -dbpath vertel ik MongoDB waar de database moet worden opgeslagen.
+Hierdoor blijven alle bestanden van FITS en C3PO binnen deze folderstructuur staan.
+Dat is handiger i.v.m. de overdraagbaarheid van het uiteindelijke geheel.
+
+NB Start de MongoDB op in een apart Command Prompt-scherm. 
+De database moet in dit aparte scherm actief blijven, terwijl je C3PO in een andere Command Prompt gebruikt.
+
+7) Command line interface C3PO 0.4.0 gedownload van 
+http://dl.bintray.com/peshkira/c3po/cli/
+en gekopieerd naar folder 
+C:\FITS_C3PO\C3PO
+
+NB In het project https://benchmark-dp.org/ is een nieuwe versie van C3PO gemaakt.
+Die versie kregen we als NA echter niet werkend.
+Vandaar dat ik hier net als bij NA een oudere versie gebruik.
+Die 0.4.0-versie van C3PO vereist MongoDB 2.0.5.
+
+8) Command line interface van C3PO in gather-mode in een Command Prompt succesvol getest d.m.v. commando:
+java -jar c:\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar gather -c testset -r -i c:\FITS_C3PO\FITS-output\testset
+
+NB Bij het uitvoeren van dit commando ontstaat mogelijk een java.util.ConcurrentModificationException.
+Dit heeft echter nog nooit tot problemen met het verwerken van de data geleid.
+Ik zie deze ERROR daarom als acceptabel.
+
+9) Command line interface van C3PO in profile-mode in een Command Prompt succesvol getest d.m.v. commando:
+java -jar c:\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar profile -c testset -o C:\FITS_C3PO\C3PO-output\testset
+
+NB De parameter -o zorgt ervoor dat uitvoer in de vorm van een XML-bestand in de folderstructuur wordt opgeslagen.
+Zonder deze parameter probeert C3PO het XML-bestand in C:\ op te staan, wat een Access is denied-ERROR oplevert.
+
+10) Command line interface van C3PO in export-mode in een Command Prompt succesvol getest d.m.v. commando:
+java -jar c:\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar export -c testset -o C:\FITS_C3PO\C3PO-output\testset
+
+NB Dit commando levert een .csv-tekstbestand (Comma Seperated Values) op, dat bijv. in Excel geopend kan worden.
+
+11) Webinterface C3PO 0.3.0 gedownload van 
+http://dl.bintray.com/peshkira/c3po/cli/
+en gekopieerd naar folder 
+C:\FITS_C3PO\C3PO
+
+NB De webinterface heeft versie 0.3.0, terwijl de command line interface versie 0.4.0 heeft.
+Dit klopt.
+
+12) Het Play-framework, versie 2.0.4, van https://downloads.typesafe.com/releases/play-2.0.4.zip gedownload,
+uitgepakt en gekopieerd naar de folder
+C:\FITS_C3PO\PLAY
+
+13) Deze versie van Play i.c.m. deze versie van C3PO vereist Java versie 1.6.0.
+Download en installeer daarom JRE6 of JDK6 in 
+C:\FITS_C3PO\JAVA
+en voeg
+C:\FITS_C3PO\JAVA\jdk1.6.0
+toe aan de PATH omgevingsvariabele (als de installer dat nog niet deed)
+en voeg 
+JAVA_HOME = C:\FITS_C3PO\JAVA\jdk1.6.0\
+toe als extra omgevingsvariabele (als de installer dat nog niet deed).
+
+NB Deze versie van Java is verouderd. 
+Gebruik deze omgeving daarom alleen voor het lokaal werken met FITS en C3PO.
+En bijvoorbeeld niet als basis voor verdere softwareontwikkeling.
+
+14) Webinterface succesvol gestart vanaf de Command Prompt door in de folder:
+C:\FITS_C3PO\C3PO\c3po-master\c3po-webapi
+het volgende commando uit te voeren:
+C:\FITS_C3PO\PLAY\play-2.0.4\play.bat run
+
+NB Dit start een webapplicatie die luistert op poort 9000.
+De URL
+http://localhost:9000/c3po/
+brengt je nu in het hoofdscherm van C3PO.
+
+NB Voor regulier gebruik van C3PO kun je beter direct deze URL gebruiken:
+http://localhost:9000/c3po/overview
+
+*** TOT SLOT ***
+Ik wilde ervoor zorgen, dat C3PO gebruik maakt van Java 1.6 (Java 6), en FITS gebruik kan maken van Java 1.8 (Java 8) of nieuwere versies.
+Daarom heb ik zowel een complete jdk1.6.0 als een complete jdk1.8.0 in de folder C:\FITS_C3PO\JAVA gezet.
+Vervolgens heb ik in C:\FITS_C3PO\PLAY\play-2.0.4\play.bat een absolute verwijzing naar C:\FITS_C3PO\JAVA\jdk1.6.0\jre\bin\java.exe gezet.
+Ook in C:\FITS_C3PO\PLAY\play-2.0.4\framework\build.bat zette ik een absolute verwijzing naar C:\FITS_C3PO\JAVA\jdk1.6.0\jre\bin\java.exe.
+En in C:\FITS_C3PO\FITS\fits-1.4.0\fits.bat zette ik en absolute verwijzing naar C:\FITS_C3PO\JAVA\jdk1.8.0\bin\java.exe.
+Mochten nieuwere versies van FITS ooit nieuwere Javaversies vereisen, voeg dan een nieuwere jdk toe, en pas de verwijzingen in fits.bat aan.
+In principe staan nu alle afhankelijkheden van FITS en C3PO, en de MongoDB-database onder de folder C:\FITS_C3PO.
+*** EINDE ***
