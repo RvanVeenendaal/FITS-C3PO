@@ -54,9 +54,7 @@ Na -dbpath staat de folder met de database. C3PO schrijft data weg in deze datab
 
 NB In BenchmarkDP is c3po doorontwikkeld, zie github.com/datascience/c3po/.
 
-Pogingen om die webapi onder Windows te laten werken mislukten.
-
-RvV 12-04-2019
+Pogingen om de daar doorontwikkelde web api onder Windows te laten werken mislukten.
 
 In de folder C:\Temp\DATASET, voer het volgende commando uit:
 
