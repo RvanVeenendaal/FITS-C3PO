@@ -1,6 +1,8 @@
 # FITS_C3PO
 README voor het werken met de tools FITS en C3PO in een 64-bits Windowsomgeving.
+
 FITS zorgt voor identificatie, validatie en metadata-extractie van bestanden.
+
 C3PO zet de resulterende FITS-XML om in profielen ("content profiles") van de bestanden.
 ## Doel van de bestanden
 Uitleg over het installeren van FITS, C3PO en benodigde software staat in INSTALL FITS en C3PO.txt.
