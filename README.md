@@ -1,6 +1,12 @@
 # FITS_C3PO
 README voor het werken met de tools FITS en C3PO in een 64-bits Windowsomgeving.
 
+Uitleg over het installeren van FITS, C3PO en benodigde software staat in INSTALL FITS en C3PO.txt.
+De commando's om de C3PO web api (met de database) te starten staan ook in de batchfile "C3PO-launcher.bat".
+De C3PO-launcher kan in een Command Prompt worden opgestart, of door de batchfile te dubbelklikken.
+De commando's om FITS, C3PO en de C3PO web api in een pipeline te starten staan in de batchfile "FITS-C3PO-launcher.bat".
+De FITS-C3PO-launcher kan in een Command Prompt worden gestart.
+
 FITS: http://projects.iq.harvard.edu/fits
 C3PO: http://ifs.tuwien.ac.at/imp/c3po (c3po-cmd-0.4.0 en bijbehorende C3PO-webapi)
 MongoDB: http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2.0.5.zip (versie 2.0.5 nodig voor C3PO)
@@ -20,9 +26,9 @@ C3PO zet de resulterende FITS-XML om in profielen ("content profiles") van de be
 
 LET OP: maak eerst de output directory (C:\demo\FITS_C3PO\FITS-OUTPUT\DATASET) waar FITS de resultaten van de analyse naar toe kan schrijven. 
  
-In de folder C:\Temp\DATASET (aangenomen dat daar de te analyseren dataset staat), voer het volgende commando uit. :
+   In de folder C:\Temp\DATASET (aangenomen dat daar de te analyseren dataset staat), voer het volgende commando uit. :
 C:\demo\FITS_C3PO\FITS-OUTPUT\FITS\fits-1.4.1\fits.bat -i c:\Temp\DATASET -o C:\demo\FITS_C3PO\FITS-OUTPUT\DATASET -r
-Na -i staat de folder met de Input, na -o staat de folder met Output, en -r zorgt ervoor dat subfolders recursief worden bezocht.
+   Na -i staat de folder met de Input, na -o staat de folder met Output, en -r zorgt ervoor dat subfolders Recursief worden bezocht.
 
 2: Maak de metadata via C3PO beschikbaar
    Start de mongodb-databaseserver op, met een verwijzing naar de lokale database.
@@ -33,7 +39,7 @@ C:\demo\FITS_C3PO\MONGODB\mongodb-2.0.5\bin\mongod.exe -dbpath C:\demo\FITS_C3PO
    *** Controleer periodiek of je de laatste versie van C3PO geïnstalleerd hebt. ***
    NB In BenchmarkDP is c3po doorontwikkeld, zie github.com/datascience/c3po/.
    Pogingen om die webapi onder Windows te laten werken mislukten.
-   De commandline-jar werkt wel naar behoren. RvV 12-04-2019
+   RvV 12-04-2019
 
 In de folder C:\Temp\DATASET, voer het volgende commando uit:
 java -jar C:\demo\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar gather -c DATASET -r -i C:\demo\FITS_C3PO\FITS\FITS-OUTPUT\DATASET
@@ -60,11 +66,5 @@ http://localhost:9000/c3po/overview
    Je kunt de export ook maken via de commandline (optie export):
 java -jar C:\demo\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar export -c DATASET -o C:\demo\FITS_C3PO\C3PO\C3PO_OUTPUT\DATASET
    Na -c staat de naam van de data in de database, na -o staat de folder waar het (kommagescheiden) exportbestand wordt weggeschreven.
-
-TOT SLOT
-   De commando's om de C3PO web api (met de database) te starten staan ook in de batchfile "C3PO-launcher.bat".
-   De C3PO-launcher kan in een Command Prompt worden opgestart, of door de batchfile te dubbelklikken.
-   De commando's om FITS, C3PO en de C3PO web api in een pipeline te starten staan in de batchfile "FITS-C3PO-launcher.bat".
-   De FITS-C3PO-launcher kan in een Command Prompt worden gestart.
 
 EINDE
