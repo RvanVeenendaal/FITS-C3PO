@@ -4,13 +4,9 @@ FITS zorgt voor identificatie, validatie en metadata-extractie van bestanden.
 C3PO zet de resulterende FITS-XML om in profielen ("content profiles") van de bestanden.
 ## Doel van de bestanden
 Uitleg over het installeren van FITS, C3PO en benodigde software staat in INSTALL FITS en C3PO.txt.
-
 De commando's om de C3PO web api (met de database) te starten staan ook in de batchfile "C3PO-launcher.bat".
-
 De C3PO-launcher kan in een Command Prompt worden opgestart, of door de batchfile te dubbelklikken. 
-
 De commando's om FITS, C3PO en de C3PO web api in een pipeline te starten staan in de batchfile "FITS-C3PO-launcher.bat".
-
 De FITS-C3PO-launcher kan in een Command Prompt worden gestart.
 
 ## De benodigde tools
