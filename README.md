@@ -30,6 +30,8 @@ LET OP: veel van de onderstaande commando's worden op de Command Prompt (cmd.exe
 
 Bekendheid met het uitvoeren van commando's op de Command Prompt wordt verondersteld.
 
+Hierna wordt ervan uitgegaan dat de tools geïnstalleerd zijn in c:\demo.
+
 ## 1: Maak FITS-analyse van dataset, vanuit folder met data.
    Voer fits.bat zonder parameters uit voor uitleg.
 
