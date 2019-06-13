@@ -79,6 +79,8 @@ In de folder C:\demo\FITS_C3PO\C3PO\c3po-master\c3po-webapi, voer het volgende c
 
 C:\demo\FITS_C3PO\PLAY\play-2.0.4\play.bat run
 
+Let op dat je in play.bat zo nodig de padnamen aanpast naar waar je de tools installeerde. Anders krijg je een foutmelding over "kan het gevonden pad niet vinden" bij het uitvoeren van dit commando.
+
 ### Open vervolgens een webbrowser en ga naar de URL:
 http://localhost:9000/c3po/overview
 
