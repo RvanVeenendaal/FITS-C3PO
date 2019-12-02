@@ -99,6 +99,6 @@ java -jar C:\demo\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar export -c DATASET -o C:\demo
 
 Na -c staat de naam van de data in de database, na -o staat de folder waar het (kommagescheiden) exportbestand wordt weggeschreven.
 
-## Let op: in C:\demo\C3PO\c3po-master\c3po-webapi\exports en in .log-bestanden slaat C3PO metadata (exports en logs) op. Mocht u uw versie van de toolset aan anderen beschikbaar willen stellen, verwijder dan eerst deze metadata.
+## Let op: in C:\demo\C3PO\c3po-master\c3po-webapi\exports en in .log-bestanden slaan C3PO en FITS  metadata (exports en logs) op. Mocht u uw versie van de toolset aan anderen beschikbaar willen stellen, verwijder dan eerst deze metadata.
 
 # EINDE
