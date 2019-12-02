@@ -13,7 +13,7 @@ De C3PO-launcher kan in een Command Prompt worden opgestart, of door de batchfil
 
 De commando's om FITS, C3PO en de C3PO web api in een pipeline te starten staan in de batchfile "FITS-C3PO-launcher.bat".
 
-De FITS-C3PO-launcher kan in een Command Prompt worden gestart.
+De FITS-C3PO-launcher kan in een Command Prompt worden gestart. Een voorbeeld van een aanroep is "FITS-C3PO-launcher.bat C:\demo\DATASET MijnDATASET", waarbij C:\demo\DATASET de map is waar uw (test)bestanden in staan, en MijnDATASET de naam is die u aan de analyseresultaten van de (test)bestanden wilt geven. Die naam gebruikt de webinterface van C3PO bijvoorbeeld als naam voor deze dataset.
 
 ## De benodigde tools
 FITS: http://projects.iq.harvard.edu/fits
@@ -98,5 +98,7 @@ Je kunt de export ook maken via de commandline (optie export):
 java -jar C:\demo\FITS_C3PO\C3PO\c3po-cmd-0.4.0.jar export -c DATASET -o C:\demo\FITS_C3PO\C3PO\C3PO_OUTPUT\DATASET
 
 Na -c staat de naam van de data in de database, na -o staat de folder waar het (kommagescheiden) exportbestand wordt weggeschreven.
+
+## Let op: in C:\demo\C3PO\c3po-master\c3po-webapi\exports en in .log-bestanden slaat C3PO metadata (exports en logs) op. Mocht u uw versie van de toolset aan anderen beschikbaar willen stellen, verwijder dan eerst deze metadata.
 
 # EINDE
