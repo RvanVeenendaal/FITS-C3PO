@@ -24,7 +24,9 @@ MongoDB: http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2.0.5.zip (vers
 
 Play: https://downloads.typesafe.com/releases/play-2.0.4.zip (versie 2.0.4 nodig voor C3PO) 
 
-Een downloadbestand (ZIP, 430 MB) met daarin de benodigde tools is beschikbaar via XXXXXXXXXX (tijdelijk niet beschikbaar, update in de maak). In plaats van alle software (en afhankelijkheden) zelf te downloaden en installeren, kun je ook dit bestand downloaden, uitpakken in een folder van je keuze en gebruiken.
+### Downloadbestand
+
+Een downloadbestand (ZIP, 430 MB) met daarin de benodigde tools, scripts en documentatie kunnen we je op verzoek toesturen. In plaats van alle software (en afhankelijkheden) zelf te downloaden, installeren en configureren, kun je dit downloadbestand aanvragen, uitpakken in een folder van je keuze en meteen gebruiken. En als je het op een USB-stick uitpakt, heb je een draagbare versie. Neem voor het downloadbestand contact op met Remco van Veenendaal, Jacob Takema of Pepijn Lucker bij het Nationaal Archief.
 
 LET OP: veel van de onderstaande commando's worden op de Command Prompt (cmd.exe) uitgevoerd.
 
