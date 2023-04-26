@@ -30,7 +30,7 @@ IF NOT EXIST %BASE_PATH%\C3PO-OUTPUT\%2\ mkdir %BASE_PATH%\C3PO-OUTPUT\%2
 
 REM Fire up FITS and write FITS XML output files to the FITS XML output directory
 ECHO Running FITS (this may take a while)...
-CALL %BASE_PATH%\FITS\fits-1.4.1\fits.bat -i %1\ -o %BASE_PATH%\FITS-OUTPUT\%2 -r
+CALL %BASE_PATH%\FITS\fits-1.5.5\fits.bat -i %1\ -o %BASE_PATH%\FITS-OUTPUT\%2 -r -n
 
 REM Fire up C3PO in gather mode, which stores the FITS XML output in the database
 ECHO Starting C3PO in GATHER mode...
